@@ -1,0 +1,262 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #111;
+    font-family: "Merienda", serif;
+}
+.weatherapp{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../img/day/cloudy.jpg);
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    transition: .5s;
+    opacity: 1;
+    &::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgb(0, 0, 0, 0.3);
+        z-index: 0;
+    }
+    >.leftSide{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 40px 50px;
+        >h1{
+            color: #d5cfcf;
+            text-shadow: 1px 1px 30px black;
+            font-size: 40px;
+        }
+        >div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            >*{
+                /* margin:0 16px; */
+                color: #d5cfcf;
+                text-shadow: 1px 1px 40px black;
+            }
+            >.temp{
+                margin: 0;
+                font-size: 80px;
+                margin-right: 40px;
+            }
+            >.citytime{
+                margin-right: 15px;
+                >h1{
+                    font-size: 50px;
+                    font-weight: 300px;
+                    margin-bottom:30px;
+                }
+                >p{
+                    font-size: 25px;
+                    font-weight: 300px;
+                    >span{
+                        display: flex;
+                        margin-inline: 10px;
+                        margin-block: 10px;
+                        flex-wrap: nowrap;
+                        &:nth-of-type(1){
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+            >.weather{
+                margin-bottom: 30px;
+                >img{
+                    width: 120px;
+                    height: 120px;
+                    margin-bottom: 15px;
+                }
+                >span{
+                    display: flex;
+                    margin-left: 35px;
+                    margin-top: 20px;
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+    >.list{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 30%;
+        height: 100%;
+        background-color: #56545455;
+        backdrop-filter: blur(10px);
+        z-index: 1;
+        padding: 70px;
+        >.form{
+            margin-bottom: 50px;
+            >.search{
+                width: 80%;
+                color: white;
+                background: none;
+                border: none;
+                outline: none;
+                border-bottom: 2px solid rgb(196, 188, 188);
+                padding: 10px;
+                font-size: 16px;
+                &::placeholder{
+                    color: #d5cfcf;
+                }
+            }
+            >i{
+                cursor: pointer;
+                color: #d5cfcf;
+                
+            }
+        }
+        >ul{
+            padding-bottom: 16px;
+            margin-block: 30px;
+            border-bottom: 1px solid rgb(187, 184, 184);
+            >li{
+                margin-block: 30px;
+                color: #d5cfcf;
+                list-style-type: none;
+                scale: 1;
+                transition: 1s;
+                &:hover{
+                    scale: 1.1;
+                }
+            }
+            >h4{
+                margin-block: 30px;
+            }
+            >.city{
+                font-size: 20px;
+                cursor: pointer;
+                transition: .4s;
+                &:hover{
+                    color: white;
+                }
+            }
+        }
+        >.details{
+            font-size: 20px;
+            >li{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                transition: .4s;
+                cursor: pointer;
+                &:hover{
+                    color: white;
+                }
+            }
+        }
+    }
+}
+.me {
+    width: 150px;
+    height: 150px;
+    position: fixed;
+    bottom: 5px;
+    right: 470px;
+    z-index: 1001;
+    /* border: 1px solid red; */
+
+    >div {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: red;
+
+
+        &:first-of-type {
+            border-radius: 49% 51% 46% 54% / 74% 77% 23% 26%;
+            background-color: #424965;
+            animation: anime2 infinite alternate 2s;
+
+        }
+
+        &:last-of-type {
+            background-image: url(../img/fateme.jpg);
+            background-size: cover;
+            border-radius: 49% 51% 46% 54% / 37% 31% 69% 63%;
+            animation: anime1 infinite alternate 2s;
+
+        }
+    }
+
+    &:hover {
+        >a {
+            left: -30px;
+            opacity: 1;
+
+            &:nth-of-type(2) {
+                left: -60px;
+            }
+
+            &:nth-of-type(3) {
+                /* left: -70px; */
+            }
+
+            &:nth-of-type(4) {
+                /* left: 10px; */
+            }
+        }
+    }
+
+    >a {
+        position: absolute;
+        left: 30px;
+        text-decoration: none;
+        font-size: 20px;
+        transition: 1s;
+        color:rgb(216, 206, 206);
+        opacity: 0;
+
+        &:first-of-type {
+            top: 0;
+
+        }
+
+        &:nth-of-type(2) {
+            top: 40px;
+        }
+
+        &:nth-of-type(3) {
+            top: 90px;
+        }
+
+        &:nth-of-type(4) {
+            top: 140px;
+        }
+
+    }
+
+
+}
+
+@keyframes anime1 {
+    to {
+        border-radius: 49% 51% 48% 52% / 46% 46% 54% 54%;
+    }
+}
+
+@keyframes anime2 {
+    to {
+        border-radius: 70% 30% 44% 56% / 46% 34% 66% 54%;
+    }
+}
